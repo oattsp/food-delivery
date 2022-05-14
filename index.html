@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="EN">
+  <header>
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Food Delivery</title>
+  </header>
+  <body>
+    <!-- Header menu -->
+    <div class="main-nav">
+      <span>Food Delivery</span>
+    </div>
+    <!-- Content -->
+    <div class="content">
+      <section>
+        <div style="width: 250px; height: 250px">
+          <img width="250px" src="./images/anh-nguyen.jpg" />
+        </div>
+        <div class="content-item">
+          <h3>สลัดปลาแซลม่อน</h3>
+          <h3>ราคา 150 บาท</h3>
+          <h3>จำนวน <input id="salmon-count" type="number" min="1" max="10" value="1" /></h3>
+          <button onclick="buttonSalmonClick()">Add</button>
+        </div>
+      </section>
+      <section>
+        <div style="width: 250px; height: 250px">
+          <img
+            width="250px"
+            src="https://pstip.cc/upload/media/entries/2021-07/12/771-entry-0-1626063579.jpg"
+          />
+        </div>
+        <div class="content-item">
+          <h3>ต้มยำกุ้ง</h3>
+          <h3>ราคา 250 บาท</h3>
+          <h3>จำนวน <input id="tomyumkung-count" type="number" min="1" max="10" value="1" /></h3>
+          <button onclick="buttonTomyumkungClick()">Add</button>
+        </div>
+      </section>
+      <section>
+        <div style="width: 250px; height: 250px">
+        <img
+          width="250px"
+          src="https://www.ต้นกล้าความรู้.com/wp-content/uploads/2018/09/image80.jpg"
+        /></div>
+        <div class="content-item">
+          <h3>ปลากระพงทอดน้ำปลา</h3>
+          <h3>ราคา 200 บาท</h3>
+          <h3>จำนวน <input id="kapong-count" type="number" min="1" max="10" value="1" /></h3>
+          <button onclick="buttonKapongClick()">Add</button>
+        </div>
+      </section>
+      <section>
+        <div style="width: 250px; height: 250px">
+        <img
+          width="250px"
+          src="https://f.ptcdn.info/246/055/000/p16u6fcx5qCJsX9BKgw-o.jpg"
+        /></div>
+        <div class="content-item">
+          <h3>ไข่เจียวปู</h3>
+          <h3>ราคา 250 บาท</h3>
+          <h3>จำนวน <input id="kaijiay-count" type="number" min="1" max="10" value="1" /></h3>
+          <button onclick="buttonKaijiayClick()">Add</button>
+        </div>
+      </section>
+    </div>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+  <script>
+    var json = [];  
+
+    function buttonSalmonClick() {
+        const count = $("#salmon-count").val();
+        if (count < 1) {
+            $("#salmon-count").val("1");
+            return;
+        }
+        json.push({
+            name: "สลัดเซลม่อน",
+            count: parseInt(count),
+            price: 150
+        })
+        console.log(json);
+
+    }
+
+    function buttonTomyumkungClick() {
+        const count = $("#tomyumkung-count").val();
+        if (count < 1) {
+            $("#tomyumkung-count").val("1");
+            return;
+        }
+        json.push({
+            name: "ต้มยำกุ้ง",
+            count: parseInt(count),
+            price: 250
+        })
+        console.log(json);
+
+    }
+
+    function buttonKapongClick() {
+        const count = $("#kapong-count").val();
+        if (count < 1) {
+            $("#kapong-count").val("1");
+            return;
+        }
+        json.push({
+            name: "ปลากระพงทอดน้ำปลา",
+            count: parseInt(count),
+            price: 200
+        })
+        console.log(json);
+
+    }
+
+    function buttonKaijiayClick() {
+        const count = $("#kaijiay-count").val();
+        if (count < 1) {
+            $("#kaijiay-count").val("1");
+            return;
+        }
+        json.push({
+            name: "ไข่เจียวปู",
+            count: parseInt(count),
+            price: 250
+        })
+        console.log(json);
+    }
+  </script>
+</html>
